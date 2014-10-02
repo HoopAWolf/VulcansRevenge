@@ -1,0 +1,20 @@
+[
+{
+  "modid": "vulcansrevenge",
+  "name": "Vulcan's Revenge",
+  "description": "Vulcan's sword was his pride and joy, then one day an adventurer broke it, sealing him away forever.",
+  "version": "Alpha",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [
+    "pauljoda, hoopawolf"
+  ],
+  "credits": "By pauljoda",
+  "logoFile": "/assets/minecraft/textures/logo.png",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]
