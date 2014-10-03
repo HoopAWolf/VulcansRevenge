@@ -3,9 +3,12 @@ package com.hoopawolf.sword;
 import com.hoopawolf.lib.Reference;
 import com.hoopawolf.particle.EntityPortalParticleFX;
 import com.hoopawolf.vulcansrevenge.VulcansRevenge;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
@@ -29,10 +32,37 @@ public class VulcansRevengeSword extends ItemSword {
         return true;
     }
 
+    @SideOnly(Side.CLIENT)
+    public boolean isFull3D()
+    {
+        return true;
+    }
+
+    /**
+     * returns the action that specifies what animation to play when the items is being used
+     */
+    public EnumAction getItemUseAction(ItemStack p_77661_1_)
+    {
+        return EnumAction.block;
+    }
+
+    /**
+     * How long it takes to use or consume an item
+     */
+    public int getMaxItemUseDuration(ItemStack p_77626_1_)
+    {
+        return 72000;
+    }
+
+
     public ItemStack onItemRightClick(ItemStack p_77659_1_, World p_77659_2_, EntityPlayer p_77659_3_) {
+
+        p_77659_3_.setItemInUse(p_77659_1_, this.getMaxItemUseDuration(p_77659_1_));
+
         int damage;
 
-        if (!p_77659_3_.capabilities.isCreativeMode) {
+        if (!p_77659_3_.capabilities.isCreativeMode && p_77659_3_.isSneaking()) {
+
             damage = p_77659_3_.inventory.getCurrentItem().getItemDamage();
             p_77659_1_.stackSize--;
             ItemStack newSword = new ItemStack(SwordManager.vulcansRevengeSwordHeavy);

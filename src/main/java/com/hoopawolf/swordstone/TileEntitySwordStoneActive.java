@@ -87,8 +87,6 @@ public class TileEntitySwordStoneActive extends TileEntity {
 
                 if (time % 20 == 0) {
 
-                    System.out.println("" + minutes);
-
                     switch (minutes) {
 
                         case 6:
