@@ -2,7 +2,6 @@ package com.hoopawolf.swordstone;
 
 import com.hoopawolf.lib.VRMEntityUtil;
 import com.hoopawolf.sword.SwordManager;
-import com.hoopawolf.vulcansrevenge.VulcansRevenge;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.effect.EntityLightningBolt;
@@ -22,7 +21,6 @@ public class BlockSwordStoneInactive extends BlockContainer {
         super(Material.rock);
         setBlockBounds(.35F, .0F, .2F, .72F, 1F, .8F);
         setBlockName("swordStoneInactive");
-        setCreativeTab(VulcansRevenge.tabVulcansRevenge);
         setBlockUnbreakable();
         setHardness(1000.0F);
 
