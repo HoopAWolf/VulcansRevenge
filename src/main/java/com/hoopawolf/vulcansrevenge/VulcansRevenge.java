@@ -46,7 +46,6 @@ public class VulcansRevenge {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
 
-        SwordManager.registerSwords();
         BlockManager.registerBlocks();
 
     }
@@ -54,6 +53,7 @@ public class VulcansRevenge {
     @EventHandler
     public void init(FMLInitializationEvent event) {
 
+        SwordManager.registerSwords();
         proxy.registerRenderers();
         GameRegistry.registerTileEntity(TileEntitySwordStoneInactive.class, "tileEntitySwordStoneInactive");
         GameRegistry.registerTileEntity(TileEntitySwordStoneActive.class, "tileEntitySwordStoneActive");

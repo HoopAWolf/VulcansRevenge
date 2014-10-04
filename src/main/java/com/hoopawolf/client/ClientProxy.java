@@ -8,6 +8,7 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void registerRenderers() {
+
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySwordStoneInactive.class, new TileEntitySwordStoneInactiveRenderer());
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySwordStoneActive.class, new TileEntitySwordSoneActiveRenderer());
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySwordStoneVulcansRevenge.class, new TileEntitySwordStoneVulcansRevengeRenderer());
