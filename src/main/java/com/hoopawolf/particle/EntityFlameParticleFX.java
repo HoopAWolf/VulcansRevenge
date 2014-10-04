@@ -1,9 +1,12 @@
 package com.hoopawolf.particle;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.particle.EntityFlameFX;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.world.World;
 
+@SideOnly(Side.CLIENT)
 public class EntityFlameParticleFX extends EntityFlameFX {
     private final double orbitSpeed, portalPosX, portalPosZ;
     private final float portalParticleScale;

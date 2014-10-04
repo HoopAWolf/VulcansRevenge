@@ -54,10 +54,10 @@ public class BlockSwordStoneVulcansRevenge extends BlockContainer {
             return false;
         }
 
-            if (player.getCurrentEquippedItem() == null && !player.capabilities.isCreativeMode) {
-                player.inventory.addItemStackToInventory(new ItemStack(SwordManager.vulcansRevengeSword, 1));
-                world.setBlock(x, y, z, BlockManager.swordStoneInactive);
-                world.markBlockForUpdate(x, y, z);
+        if (player.getCurrentEquippedItem() == null && !player.capabilities.isCreativeMode) {
+            player.inventory.addItemStackToInventory(new ItemStack(SwordManager.vulcansRevengeSword, 1));
+            world.setBlock(x, y, z, BlockManager.swordStoneInactive);
+            world.markBlockForUpdate(x, y, z);
 
         }
         return false;

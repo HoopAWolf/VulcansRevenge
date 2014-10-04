@@ -33,24 +33,21 @@ public class VulcansRevengeSword extends ItemSword {
     }
 
     @SideOnly(Side.CLIENT)
-    public boolean isFull3D()
-    {
+    public boolean isFull3D() {
         return true;
     }
 
     /**
      * returns the action that specifies what animation to play when the items is being used
      */
-    public EnumAction getItemUseAction(ItemStack p_77661_1_)
-    {
+    public EnumAction getItemUseAction(ItemStack p_77661_1_) {
         return EnumAction.block;
     }
 
     /**
      * How long it takes to use or consume an item
      */
-    public int getMaxItemUseDuration(ItemStack p_77626_1_)
-    {
+    public int getMaxItemUseDuration(ItemStack p_77626_1_) {
         return 72000;
     }
 
