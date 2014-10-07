@@ -3,6 +3,7 @@ package com.hoopawolf.vulcansrevenge;
 
 import com.hoopawolf.common.CommonProxy;
 import com.hoopawolf.lib.Reference;
+import com.hoopawolf.lib.VRMEventHandler;
 import com.hoopawolf.sword.SwordManager;
 import com.hoopawolf.swordstone.BlockManager;
 import com.hoopawolf.swordstone.TileEntitySwordStoneActive;
@@ -11,7 +12,6 @@ import com.hoopawolf.swordstone.TileEntitySwordStoneVulcansRevenge;
 import com.hoopawolf.tab.VRMtab;
 import com.hoopawolf.worldgen.VulcansRevengeWorldGenerator;
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
@@ -22,6 +22,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraftforge.common.ChestGenHooks;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.Version)
@@ -43,14 +44,14 @@ public class VulcansRevenge {
             CreativeTabs.getNextID(), "tabVulcansRevenge");
 
 
-    @EventHandler
+    @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
 
         BlockManager.registerBlocks();
 
     }
 
-    @EventHandler
+    @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
 
         SwordManager.registerSwords();
@@ -70,8 +71,10 @@ public class VulcansRevenge {
     }
 
 
-    @EventHandler
+    @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
+
+        MinecraftForge.EVENT_BUS.register(new VRMEventHandler());
 
     }
 

@@ -66,21 +66,23 @@ public class VulcansRevengeSwordWither extends ItemSword {
             newSword.setItemDamage(damage);
             p_77659_3_.inventory.addItemStackToInventory(newSword);
 
-            Random rand = new Random();
-            double d = rand.nextGaussian() * 0.004D;
-            for (double i = 0; i <= 2; i++) {
-                Minecraft.getMinecraft().effectRenderer.addEffect(new EntityFlameParticleFX(p_77659_2_, p_77659_3_.posX,
-                        p_77659_3_.posY + i - 0.5,
-                        p_77659_3_.posZ, d, 0.5D));
-                Minecraft.getMinecraft().effectRenderer.addEffect(new EntityFlameParticleFX(p_77659_2_, p_77659_3_.posX,
-                        p_77659_3_.posY + i - 0.5,
-                        p_77659_3_.posZ, d, 0.5D));
-                Minecraft.getMinecraft().effectRenderer.addEffect(new EntityFlameParticleFX(p_77659_2_, p_77659_3_.posX,
-                        p_77659_3_.posY + i - 0.5,
-                        p_77659_3_.posZ, d, 0.5D));
-                Minecraft.getMinecraft().effectRenderer.addEffect(new EntityFlameParticleFX(p_77659_2_, p_77659_3_.posX,
-                        p_77659_3_.posY + i - 0.5,
-                        p_77659_3_.posZ, d, 0.5D));
+            if (p_77659_2_.isRemote) {
+                Random rand = new Random();
+                double d = rand.nextGaussian() * 0.004D;
+                for (double i = 0; i <= 2; i++) {
+                    Minecraft.getMinecraft().effectRenderer.addEffect(new EntityFlameParticleFX(p_77659_2_, p_77659_3_.posX,
+                            p_77659_3_.posY + i - 0.5,
+                            p_77659_3_.posZ, d, 0.5D));
+                    Minecraft.getMinecraft().effectRenderer.addEffect(new EntityFlameParticleFX(p_77659_2_, p_77659_3_.posX,
+                            p_77659_3_.posY + i - 0.5,
+                            p_77659_3_.posZ, d, 0.5D));
+                    Minecraft.getMinecraft().effectRenderer.addEffect(new EntityFlameParticleFX(p_77659_2_, p_77659_3_.posX,
+                            p_77659_3_.posY + i - 0.5,
+                            p_77659_3_.posZ, d, 0.5D));
+                    Minecraft.getMinecraft().effectRenderer.addEffect(new EntityFlameParticleFX(p_77659_2_, p_77659_3_.posX,
+                            p_77659_3_.posY + i - 0.5,
+                            p_77659_3_.posZ, d, 0.5D));
+                }
             }
         }
 
