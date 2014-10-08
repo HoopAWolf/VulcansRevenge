@@ -1,10 +1,8 @@
 package com.hoopawolf.sword;
 
 import com.hoopawolf.lib.Reference;
-import com.hoopawolf.particle.EntitySmokeParticleFX;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
@@ -67,7 +65,7 @@ public class VulcansRevengeSwordFrost extends ItemSword {
             p_77659_3_.inventory.addItemStackToInventory(newSword);
             Random rand = new Random();
 
-            if (p_77659_2_.isRemote) {
+         /*PARTICLES CRASHES THE SERVER!! /*  if (p_77659_2_.isRemote) {
                 double d = rand.nextGaussian() * 0.004D;
                 for (double i = 0; i <= 2; i++) {
                     Minecraft.getMinecraft().effectRenderer.addEffect(new EntitySmokeParticleFX(p_77659_2_, p_77659_3_.posX,
@@ -83,7 +81,7 @@ public class VulcansRevengeSwordFrost extends ItemSword {
                             p_77659_3_.posY + i - 0.5,
                             p_77659_3_.posZ, d, 0.5D));
                 }
-            }
+            }*/
         }
         return p_77659_1_;
     }

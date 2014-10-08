@@ -1,10 +1,8 @@
 package com.hoopawolf.sword;
 
 import com.hoopawolf.lib.Reference;
-import com.hoopawolf.particle.EntitySnowParticleFX;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
@@ -12,8 +10,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.world.World;
-
-import java.util.Random;
 
 public class VulcansRevengeSwordHeavy extends ItemSword {
 
@@ -63,7 +59,7 @@ public class VulcansRevengeSwordHeavy extends ItemSword {
             newSword.setItemDamage(damage);
             p_77659_3_.inventory.addItemStackToInventory(newSword);
 
-            if (p_77659_2_.isRemote) {
+         /*PARTICLES CRASHES THE SERVER!! /*  if (p_77659_2_.isRemote) {
                 Random rand = new Random();
                 double d = rand.nextGaussian() * 0.004D;
                 for (double i = 0; i <= 2; i++) {
@@ -80,7 +76,7 @@ public class VulcansRevengeSwordHeavy extends ItemSword {
                             p_77659_3_.posY + i - 0.5,
                             p_77659_3_.posZ, d, 0.5D));
                 }
-            }
+            }*/
         }
         return p_77659_1_;
     }
